@@ -1,0 +1,35 @@
+{
+  "name": "flickerstrip-utils",
+  "version": "1.0.0",
+  "description": "Library to make it easier to work with a Flickerstrip",
+  "homepage": "https://github.com/matthewtole/flickerstrip-utils",
+  "bugs": {
+    "url": "https://github.com/matthewtole/flickerstrip-utils/issues"
+  },
+  "license": "MIT",
+  "author": "Matthew Tole <matthewtole@gmail.com>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthewtole/flickerstrip-utils.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "airbnb"
+  },
+  "dependencies": {
+    "got": "^6.7.1",
+    "node-ssdp": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^19.0.1",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "jest": "^19.0.2"
+  }
+}
