@@ -5,11 +5,12 @@ class Flickerstrip {
   static findOne() {
     return new Promise((resolve, reject) => {
       const ssdp = new SsdpClient();
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         reject(new Error('No Flickerstrip could be found!'));
-      }, 1000);
+      }, 10000);
       ssdp.on('response', (headers, statusCode, info) => {
         if (headers.SERVER.match(/Flickerstrip/i)) {
+          clearTimeout(timer);
           return resolve(new Flickerstrip({ ip: info.address }));
         }
         return false;
