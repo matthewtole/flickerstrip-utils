@@ -3,7 +3,6 @@ const FakeFlickerstrip = require('./mocks/flickerstrip');
 const assert = require('assert');
 
 describe('Flickerstrip', () => {
-
   let fakeFlickerstrip;
   let flickerstrip;
 
@@ -19,20 +18,16 @@ describe('Flickerstrip', () => {
   });
 
   describe('#turnOn', () => {
-    test('should turn on the Flickerstrip', () => {
-      return flickerstrip.turnOn().then(() => {
-        assert(fakeFlickerstrip.state.on);
-        return Promise.resolve();
-      });
-    });
+    test('should turn on the Flickerstrip', () => flickerstrip.turnOn().then(() => {
+      assert(fakeFlickerstrip.state.on);
+      return Promise.resolve();
+    }));
   });
 
   describe('#turnOff', () => {
-    test('should turn off the Flickerstrip', () => {
-      return flickerstrip.turnOff().then(() => {
-        assert(!fakeFlickerstrip.state.on);
-        return Promise.resolve();
-      });
-    });
+    test('should turn off the Flickerstrip', () => flickerstrip.turnOff().then(() => {
+      assert(!fakeFlickerstrip.state.on);
+      return Promise.resolve();
+    }));
   });
 });
