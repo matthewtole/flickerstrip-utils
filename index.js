@@ -24,7 +24,7 @@ class Flickerstrip {
   }
 
   static find(options) {
-    options = assign({ timeout: 10 }, options || {});
+    options = assign({ timeout: 10 }, options || {}); // eslint-disable-line no-param-reassign
     return new Promise((resolve) => {
       const strips = [];
       const ssdp = new SsdpClient();
@@ -45,11 +45,15 @@ class Flickerstrip {
   }
 
   turnOff() {
-    return got(`http://${this.ip}/power/off`);
+    return got(`http://${this.ip}/power/off`, { json: true }).then(() => true);
   }
 
   turnOn() {
-    return got(`http://${this.ip}/power/on`);
+    return got(`http://${this.ip}/power/on`, { json: true }).then(() => true);
+  }
+
+  status() {
+    return got(`http://${this.ip}/status`, { json: true }).then(res => res.body);
   }
 }
 

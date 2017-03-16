@@ -26,6 +26,7 @@
     "node-ssdp": "^3.2.0"
   },
   "devDependencies": {
+    "cli-table": "^0.3.1",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
